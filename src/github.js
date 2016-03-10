@@ -408,7 +408,7 @@
 
          this.listPulls = function (options, cb) {
             options = options || {};
-            var url = repoPath + '/pulls';
+            var url = repoPath + '/pulls';r
             var params = [];
 
             if (typeof options === 'string') {
@@ -947,6 +947,13 @@
 
          this.getRelease = function(id, cb) {
             _request('GET', repoPath + '/releases/' + id, null, cb);
+         };
+         
+         // List releases
+         // --------
+         
+         this.listReleases = function(options, cb) {
+            _request('GET', repoPath + '/releases', options, cb);
          };
 
          // Remove a release
